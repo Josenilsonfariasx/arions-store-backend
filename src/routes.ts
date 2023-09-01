@@ -1,7 +1,8 @@
 import { Router, Request, Response } from "express";
+import { CreateUserController } from "./controllers/user/CreateUserController";
 
 export const router = Router();
+// ---Rotas---
 
-router.get("/teste", (req: Request, res: Response) => {
-    throw new Error("Erro ao fazer requisição");
-});
+// ---user---
+router.post("/users", new CreateUserController().handle);
